@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Auto Updating Userscript Template
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.0.2
 // @description  Sample template for auto updating userscript
 // @author       firlin123
 // @match        https://example.com/
@@ -18,14 +18,14 @@
     let scriptVersion = {
         major: 0,
         minor: 0,
-        patch: 1
+        patch: 2
     };
     let scriptUpdateUrl = 'https://firlin123.github.io/auto-updating-userscript-template/auto-updating-userscript-template.user.js';
 
     function main(name, fromLocalStorage, updateUrl) {
         'use strict';
         console.log('Main starting...' + (fromLocalStorage ? ' (fromLocalStorage)' : ''));
-        console.log('Hello from Main V0.0.1');
+        console.log('Hello from Main V0.0.2');
 
         // OnUpdate callback
         window[name + 'OnUpdate'] = function onUpdate(updateVersion, changeLog) {
@@ -49,6 +49,13 @@
     }
 
     let scriptChangeLog = [
+        {
+            version: { major: 0, minor: 0, patch: 2 }, changes: [
+                'Fixed bug',
+                'Improved UI',
+                'Etc...'
+            ]
+        },
     ];
 
     // ======== Auto update code  ======== //
